@@ -16,7 +16,6 @@ const __dirname = dirname(fileURLToPath(import.meta.url))
 const docsRoot = resolve(__dirname, '..')
 const MCP_TOOLS_URL = 'https://openapi.longbridge.com/mcp/tools.json'
 const MCP_TOOLS_DATA_PATH = resolve(__dirname, 'data/mcp-tools.json')
-const MCP_TOOLS_SNAPSHOT_PATH = resolve(__dirname, 'data/mcp-tools.snapshot.json')
 const regionCfg = getRegionConfig()
 const regionSrcExclude = computeSrcExclude(docsRoot)
 
@@ -183,18 +182,11 @@ export default defineConfig(
         {
           name: 'fetch-mcp-tools',
           async buildStart() {
-            try {
-              const res = await fetch(MCP_TOOLS_URL)
-              if (!res.ok) throw new Error(`HTTP ${res.status}`)
-              const json = await res.json()
-              writeFileSync(MCP_TOOLS_DATA_PATH, JSON.stringify(json, null, 2))
-              console.log('✓ mcp-tools.json fetched')
-            } catch (err) {
-              const msg = err instanceof Error ? err.message : String(err)
-              console.warn(`⚠ fetch mcp tools failed (${msg}), falling back to snapshot`)
-              const snapshot = readFileSync(MCP_TOOLS_SNAPSHOT_PATH, 'utf-8')
-              writeFileSync(MCP_TOOLS_DATA_PATH, snapshot)
-            }
+            const res = await fetch(MCP_TOOLS_URL)
+            if (!res.ok) throw new Error(`fetch mcp tools failed: HTTP ${res.status}`)
+            const json = await res.json()
+            writeFileSync(MCP_TOOLS_DATA_PATH, JSON.stringify(json, null, 2))
+            console.log('✓ mcp-tools.json fetched')
           },
         },
         groupIconVitePlugin(),
