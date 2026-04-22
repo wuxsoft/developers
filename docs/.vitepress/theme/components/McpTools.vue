@@ -256,35 +256,20 @@ function getParams(schema?: ToolSchema): ParamRow[] {
   transition: color 0.15s ease;
 }
 
-.mcp-tools-input-wrap:focus-within .mcp-tools-search-icon {
-  color: var(--vp-c-brand-1);
-}
-
 .mcp-tools-input {
   width: 100%;
   padding: 0.55rem 2.25rem 0.55rem 2.25rem;
   border: 1px solid var(--vp-c-divider);
   border-radius: 8px;
-  background: var(--vp-c-bg-soft);
+  background: transparent;
   color: var(--vp-c-text-1);
   font-size: 0.9rem;
   line-height: 1.25;
   outline: none;
-  transition: border-color 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
 }
 
 .mcp-tools-input::placeholder {
   color: var(--vp-c-text-3);
-}
-
-.mcp-tools-input:hover {
-  border-color: var(--vp-c-border);
-}
-
-.mcp-tools-input:focus {
-  border-color: var(--vp-c-brand-1);
-  background: var(--vp-c-bg);
-  box-shadow: 0 0 0 3px color-mix(in srgb, var(--vp-c-brand-1) 18%, transparent);
 }
 
 .mcp-tools-clear {
@@ -346,7 +331,7 @@ function getParams(schema?: ToolSchema): ParamRow[] {
 
 .mcp-tool-name {
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, monospace;
-  font-size: 0.9rem;
+  font-size: 1rem;
   color: var(--vp-c-text-1);
   background: transparent;
   padding: 0;
@@ -354,25 +339,25 @@ function getParams(schema?: ToolSchema): ParamRow[] {
 
 .mcp-tools-list :deep(.mcp-accordion-trigger) {
   padding: 0.5rem 0;
-  font-size: 0.9rem;
+  font-size: 1rem;
 }
 
 .mcp-tool-desc {
   margin: 0 0 0.5rem;
   color: var(--vp-c-text-2);
-  font-size: 0.8rem;
+  font-size: 0.75rem;
 }
 
 .mcp-tool-no-params {
   margin: 0;
   color: var(--vp-c-text-3);
   font-style: italic;
-  font-size: 0.8rem;
+  font-size: 0.75rem;
 }
 
 .mcp-params-title {
   margin: 0 0 0.35rem;
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   font-weight: 400;
   color: var(--vp-c-text-2);
 }
@@ -402,7 +387,7 @@ function getParams(schema?: ToolSchema): ParamRow[] {
 
 .mcp-param-name {
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, monospace;
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   color: var(--vp-c-text-1);
   background: var(--vp-c-bg-soft);
   padding: 0.05rem 0.35rem;
@@ -410,16 +395,15 @@ function getParams(schema?: ToolSchema): ParamRow[] {
 }
 
 .mcp-param-type {
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   color: var(--vp-c-text-2);
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, monospace;
 }
 
 .mcp-param-required {
-  font-size: 0.8rem;
-  font-weight: 600;
-  color: #ef4444;
-  background: rgba(239, 68, 68, 0.1);
+  font-size: 0.75rem;
+  color: var(--vp-c-text-2);
+  background: var(--vp-c-bg-soft);
   padding: 0.08rem 0.35rem;
   border-radius: 4px;
 }
@@ -432,14 +416,14 @@ function getParams(schema?: ToolSchema): ParamRow[] {
 .mcp-param-desc {
   margin: 0;
   color: var(--vp-c-text-2);
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   line-height: 1.45;
 }
 
 .mcp-param-meta {
   margin: 0;
   color: var(--vp-c-text-3);
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, monospace;
 }
 </style>
