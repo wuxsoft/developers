@@ -181,7 +181,7 @@ OAuth 2.0 是現代化的認證方式，使用 Bearer Token，無需 HMAC 簽名
 
 **第一步：註冊 OAuth 客戶端**
 
-造訪 [Longbridge Developers](https://open.longbridge.com) 網站，登入後進入「個人中心」，註冊 OAuth 客戶端獲取 `client_id`：
+執行以下命令註冊 OAuth 客戶端，取得 `client_id`：
 
 <Tabs groupId="shell">
 <TabItem value="bash" label="Bash" default>

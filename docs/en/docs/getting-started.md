@@ -179,7 +179,7 @@ OAuth 2.0 is the modern authentication method that uses Bearer tokens without re
 
 **Step 1: Register OAuth Client**
 
-Visit [Longbridge Developers](https://open.longbridge.com), login and enter "User Center" to register an OAuth client and get your `client_id`:
+Run the following command to register an OAuth client and get your `client_id`:
 
 <Tabs groupId="shell">
 <TabItem value="bash" label="Bash" default>
